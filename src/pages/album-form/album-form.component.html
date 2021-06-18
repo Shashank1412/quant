@@ -1,0 +1,59 @@
+<form [formGroup]="postForm">
+  <div class="card-body">
+
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Edit Post</h4>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">User Id
+            <span style="color: red;">*</span>
+          </label>
+          <input name="userId" formControlName="userId" type="text" class="form-control" placeholder="Enter Name" />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">ID
+            <span style="color: red;">*</span>
+          </label>
+          <input name="id" formControlName="id" type="text" class="form-control" placeholder="Enter Email" />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Title
+            <span style="color: red;">*</span>
+          </label>
+          <input name="title" formControlName="title" type="title" class="form-control" placeholder="Enter title" />
+        </div>
+      </div>
+
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Body
+            <span style="color: red;">*</span>
+          </label>
+          <textarea name="body" formControlName="body" type="text" class="form-control"
+            placeholder="Enter Body"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer small text-muted">
+    <div style="display: flow-root;">
+      <div class="float-right">
+        <button [routerLink]="redirectTo" class="btn btn-secondary btn-sm mr-2" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+</form>

@@ -1,0 +1,68 @@
+<form [formGroup]="postForm">
+  <div class="card-body">
+
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Edit Photos</h4>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Albums Id
+            <span style="color: red;">*</span>
+          </label>
+          <input name="albumId" formControlName="albumId" type="text" class="form-control" placeholder="Enter Album Id" />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">ID
+            <span style="color: red;">*</span>
+          </label>
+          <input name="id" formControlName="id" type="text" class="form-control" placeholder="Enter Id" />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Title
+            <span style="color: red;">*</span>
+          </label>
+          <input name="title" formControlName="title" type="title" class="form-control" placeholder="Enter title" />
+        </div>
+      </div>
+
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">URL
+            <span style="color: red;">*</span>
+          </label>
+          <textarea name="url" formControlName="url" type="text" class="form-control"
+          placeholder="Enter url"></textarea>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Thumbnail Url
+            <span style="color: red;">*</span>
+          </label>
+          <textarea name="thumbnailUrl" formControlName="thumbnailUrl" type="text" class="form-control" placeholder="Enter url"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer small text-muted">
+    <div style="display: flow-root;">
+      <div class="float-right">
+        <button [routerLink]="redirectTo" class="btn btn-secondary btn-sm mr-2" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+</form>

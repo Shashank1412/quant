@@ -1,0 +1,52 @@
+<div class="app-body" style="margin-top: 10rem;">
+
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card p-4" style="width: 60%;
+          margin: 0 auto;
+          float: none;
+          margin-bottom: 10px;">
+          <div class="card-body">
+            <form [formGroup]="loginForm"  (ngSubmit)="login()">
+              <!-- (ngSubmit)="login()"> -->
+              <h1>Login</h1>
+              <p class="text-muted">Sign In to your account</p>
+              <div class="input-group mb-3">
+                <!-- <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                </div> -->
+                <input type="number" class="form-control" formControlName="mobile" placeholder="Mobile No"
+                [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }"/>
+                <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                  <div *ngIf="f.mobile.errors.required">Mobile Number is required</div>
+                  <div *ngIf="f.mobile.errors?.pattern">Mobile Number is invalid</div>
+                </div>
+              </div>
+              <div class="input-group mb-4">
+                <!-- <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="icon-lock"></i></span>
+                </div> -->
+                <input type="number" class="form-control" formControlName="otp" placeholder="OTP"
+                [ngClass]="{ 'is-invalid': submitted && f.otp.errors }"/>
+                <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
+                  <div *ngIf="f.otp.errors.required">otp  is required</div>
+                </div>
+                <!--[(ngModel)]="authData.password"-->
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <button [disabled]="loading" class="btn btn-primary px-4">Login</button>
+                  <img *ngIf="loading" class="pl-3"
+                  src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>

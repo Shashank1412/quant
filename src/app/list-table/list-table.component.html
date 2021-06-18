@@ -1,0 +1,55 @@
+<div class="datatable table-responsive">
+  <div>
+    <div class="row mb-4">
+      <div class="col-sm-12" style="overflow-x: scroll;">
+        <table *ngIf="(pageDetails == 'post' || pageDetails == 'albums' || pageDetails == 'todo')" class="table table-bordered table-hover mb-0" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th> Item</th>
+              <th>Item Category</th>
+              <th >Quantity</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of list | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;">
+              <td>{{record.item}}</td>
+              <td>{{record.itemCategory}}</td>
+              <td>{{record.quantity}}</td>
+              <td>{{record.price}}</td>
+              <td *ngIf="pageDetails == 'post'" style="width: 3%;cursor: pointer;"> <!--   -->
+                <!-- <i class="far fa-edit"></i> --><button type="button" (click)="addCartEvent(record,i)">Add cart</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table *ngIf="pageDetails == 'cart'" class="table table-bordered table-hover mb-0" id="dataTable" width="100%"
+        cellspacing="0">
+        <thead>
+          <tr>
+            <th> Item</th>
+            <th>Item Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let record of list | paginate: { itemsPerPage: 10, currentPage: p }; let i = index;">
+            <td>{{record.item}}</td>
+            <td>{{record.itemCategory}}</td>
+            <td>{{record.quantity}}</td>
+            <td>{{record.price}}</td>
+            <td *ngIf="pageDetails == 'cart'" style="width: 3%;cursor: pointer;">
+              <!--   -->
+              <!-- <i class="far fa-edit"></i> --><button type="button" (click)="removeAddCart(record,i)">Remove cart</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+</div>
+</div>

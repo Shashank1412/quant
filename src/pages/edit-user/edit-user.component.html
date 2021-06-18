@@ -1,0 +1,177 @@
+<form [formGroup]="postForm">
+  <div class="card-body">
+
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Edit Post</h4>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Id
+            <span style="color: red;">*</span>
+          </label>
+          <input name="id" formControlName="id" type="text" class="form-control" placeholder="Enter Name" />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Name
+            <span style="color: red;">*</span>
+          </label>
+          <input name="name" formControlName="name" type="text" class="form-control" placeholder="Enter Email" />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Username
+            <span style="color: red;">*</span>
+          </label>
+          <input name="username" formControlName="username" type="username" class="form-control" placeholder="Enter title" />
+        </div>
+      </div>
+
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Email
+            <span style="color: red;">*</span>
+          </label>
+          <input name="email" formControlName="email" type="text" class="form-control"
+          placeholder="Enter email"/>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Street
+            <span style="color: red;">*</span>
+          </label>
+          <input name="street" formControlName="street" [value]="editMode.data?.address.street"type="text" class="form-control" placeholder="Enter street" />
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Suite
+            <span style="color: red;">*</span>
+          </label>
+          <input name="suite" formControlName="suite" type="text"   [value]="editMode.data?.address.suite" class="form-control" placeholder="Enter suite" />
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">City
+            <span style="color: red;">*</span>
+          </label>
+          <input name="city" formControlName="city" type="text" class="form-control" [value]="editMode.data?.address.city"  placeholder="Enter city" />
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Zipcode
+            <span style="color: red;">*</span>
+          </label>
+          <input name="zipcode" formControlName="zipcode" type="text" [value]="editMode.data?.address.zipcode"  class="form-control" placeholder="Enter zipcode" />
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Phone
+            <span style="color: red;">*</span>
+          </label>
+          <input name="phone" formControlName="phone" type="text" class="form-control" placeholder="Enter phone" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-body">
+
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Geolocation</h4>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Latitude
+            <span style="color: red;">*</span>
+          </label>
+          <input name="lat" formControlName="lat" type="text" [value]="editMode.data?.address?.geo.lat" class="form-control" placeholder="Enter Latitude" />
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Longtitude
+            <span style="color: red;">*</span>
+          </label>
+          <input name="lng" formControlName="lng" type="text" class="form-control" [value]="editMode.data?.address?.geo.lng" placeholder="Enter Longtitude" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body">
+
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Company</h4>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Name
+            <span style="color: red;">*</span>
+          </label>
+          <input name="companyName" formControlName="companyName" [value]="editMode.data?.company?.name" type="text" class="form-control" placeholder="Enter Company Name" />
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">Catch Phrase
+            <span style="color: red;">*</span>
+          </label>
+          <input name="catchPhrase" formControlName="catchPhrase" [value]="editMode.data?.company?.catchPhrase" type="text" class="form-control" placeholder="Enter Catch Phrase" />
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="postForm">BS
+            <span style="color: red;">*</span>
+          </label>
+          <input name="bs" formControlName="bs" type="text"   [value]="editMode.data?.company?.bs" class="form-control"
+          placeholder="Enter bs" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-footer small text-muted">
+    <div style="display: flow-root;">
+      <div class="float-right">
+        <button [routerLink]="redirectTo" class="btn btn-secondary btn-sm mr-2" type="button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+</form>
